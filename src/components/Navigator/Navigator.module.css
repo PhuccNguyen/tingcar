@@ -1,0 +1,140 @@
+.navigator {
+  padding: var(--space-32) 0;
+  background: var(--color-phantom-dark);
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-8);
+}
+
+.card {
+  position: relative;
+  background: var(--color-carbon-grey);
+  border: var(--border-width) solid var(--glass-border);
+  padding: var(--space-12) var(--space-8);
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  border-color: var(--color-champagne-gold);
+  box-shadow: var(--shadow-gold-lg);
+}
+
+/* Shimmer Effect */
+.shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.card:hover .shimmer {
+  left: 100%;
+}
+
+/* Icon */
+.icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-6);
+  color: var(--color-champagne-gold);
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 12px var(--color-gold-shadow));
+}
+
+/* Text */
+.title {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-champagne-gold);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.01em;
+}
+
+.description {
+  font-size: var(--text-base);
+  font-weight: var(--weight-light);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-6);
+}
+
+/* Arrow */
+.arrow {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  color: var(--color-champagne-gold);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover .arrow {
+  opacity: 1;
+}
+
+.arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navigator {
+    padding: var(--space-24) 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .card {
+    padding: var(--space-10) var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    gap: var(--space-12);
+  }
+
+  .card {
+    padding: var(--space-16) var(--space-10);
+  }
+}

@@ -1,0 +1,249 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-bottom: var(--border-width) solid transparent;
+  transition: all var(--transition-base);
+}
+
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-bottom-color: var(--glass-border);
+  box-shadow: var(--shadow-gold-sm);
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+/* Logo */
+.logo {
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  margin: -30px 0;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+  transition: all var(--transition-base);
+  display: block;
+}
+
+.logo:hover img {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+}
+
+/* Desktop Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+}
+
+.navLink {
+  position: relative;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: 2.5px;
+  color: var(--color-text-secondary);
+  padding: var(--space-2) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-base);
+}
+
+.navLink:hover,
+.navLink.active {
+  color: var(--color-champagne-gold);
+}
+
+.navUnderline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gradient-gold);
+  transition: width var(--transition-base);
+}
+
+.navLink:hover .navUnderline,
+.navLink.active .navUnderline {
+  width: 100%;
+}
+
+/* Language Switcher */
+.languageSwitcher {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.langBtn {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: 1.5px;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  transition: color var(--transition-base);
+}
+
+.langBtn:hover,
+.langBtn.activeLang {
+  color: var(--color-champagne-gold);
+}
+
+.langDivider {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Mobile Menu Toggle */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.menuToggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-champagne-gold);
+  transition: all var(--transition-base);
+  transform-origin: center;
+}
+
+.menuToggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menuToggle.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.menuToggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  overflow: hidden;
+  background: var(--color-phantom-dark);
+  border-top: var(--border-width) solid var(--glass-border);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6) var(--space-6);
+  gap: var(--space-4);
+}
+
+.mobileNavLink {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  letter-spacing: 2px;
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: var(--space-3) 0;
+  border-bottom: var(--border-width) solid var(--glass-border);
+  transition: all var(--transition-base);
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+  color: var(--color-champagne-gold);
+  padding-left: var(--space-4);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+  }
+  
+  .menuToggle {
+    display: flex;
+  }
+  
+  .header {
+    backdrop-filter: blur(8px);
+  }
+  
+  .header.scrolled {
+    backdrop-filter: blur(4px);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: var(--space-5) var(--space-12);
+  }
+  
+  .logo img {
+    height: 90px;
+  }
+  
+  .header {
+    backdrop-filter: blur(12px);
+  }
+  
+  .header.scrolled {
+    backdrop-filter: blur(4px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding: var(--space-6) var(--space-16);
+  }
+  
+  .nav {
+    gap: var(--space-12);
+  }
+  
+  .navLink {
+    font-size: var(--text-sm);
+  }
+  
+  .logo img {
+    height: 130px;
+  }
+  
+  .header {
+    backdrop-filter: blur(100px);
+  }
+  
+  .header.scrolled {
+    backdrop-filter: blur(4px);
+  }
+}
