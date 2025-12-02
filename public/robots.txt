@@ -1,0 +1,18 @@
+# robots.txt for TingCar
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemaps
+Sitemap: https://tingcar.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /

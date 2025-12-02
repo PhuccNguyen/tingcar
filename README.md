@@ -1,6 +1,24 @@
-# TingCar - Luxury & Exotic Car Rental
+# TingCar - Luxury & Exotic Car Rental 🚗✨
 
 Một website cao cấp cho dịch vụ thuê xe, sửa chữa và detailing ô tô xa xỉ.
+
+## 🎯 SEO Tối Ưu Hoàn Toàn
+
+Website đã được tối ưu SEO ở **mức tối đa** với:
+
+✅ **Metadata đầy đủ** - Title, Description, Keywords, OG tags, Twitter Cards  
+✅ **Structured Data** - JSON-LD Schema cho Organization, WebSite, AutoRental  
+✅ **robots.txt & sitemap.xml** - Tự động tạo và tối ưu  
+✅ **Performance** - Image optimization, Compression, Cache headers  
+✅ **Analytics** - Google Analytics 4 tích hợp sẵn  
+✅ **Accessibility** - ARIA labels, Semantic HTML  
+✅ **Mobile-first** - Responsive, PWA ready  
+
+📊 **Expected Lighthouse SEO Score**: 95-100/100
+
+👉 **Xem hướng dẫn chi tiết**: `SEO_GUIDE.md`
+
+---
 
 ## Tính Năng
 

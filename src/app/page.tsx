@@ -11,16 +11,28 @@ import Footer from '@/components/Footer/Footer';
 
 export default function Home() {
   return (
-    <main> 
+    <main itemScope itemType="https://schema.org/WebPage"> 
       <Header />
       <Hero />
       <Navigator />
-      <Featured />
-      <Renting />
-      <Repairing />
-      <Detailing />
-      <About />
-      <Contact />
+      <section id="featured" aria-label="Featured luxury cars">
+        <Featured />
+      </section>
+      <section id="renting" aria-label="Car rental services">
+        <Renting />
+      </section>
+      <section id="repairing" aria-label="Car repair services">
+        <Repairing />
+      </section>
+      <section id="detailing" aria-label="Car detailing services">
+        <Detailing />
+      </section>
+      <section id="about" aria-label="About TingCar">
+        <About />
+      </section>
+      <section id="contact" aria-label="Contact information">
+        <Contact />
+      </section>
       <Footer />
     </main>
   );
